@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" :"nodemon src/app.ts"
+    
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "pg": "^8.7.3"
+    "nodemon": "^2.0.19",
+    "pg": "^8.7.3",
+    "ts-node": "^10.8.2"
   }
 }

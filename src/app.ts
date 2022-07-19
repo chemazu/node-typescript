@@ -1,8 +1,9 @@
-import express from 'express';
+const express = require('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser')
-const {getUsers} = require('./queries')
+// const {getUsers} = require('./queries')
+const register= require('./api/accounts/register')
 
 
 app.use(bodyParser.json())
@@ -12,14 +13,11 @@ app.use(
   })
 )
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
-app.get('/',getUsers)
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+app.use('/api/accounts/register', register)
 
-// app.get('/users', (req, res) => {
-//   res.send('Hello World!');
-// });
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });

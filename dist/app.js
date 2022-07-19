@@ -12,13 +12,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true,
 }));
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
-app.get('/', getUsers);
-// app.get('/users', (req, res) => {
-//   res.send('Hello World!');
-// });
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+app.get('/users', getUsers);
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
